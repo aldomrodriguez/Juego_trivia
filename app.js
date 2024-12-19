@@ -81,11 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
         options.forEach(option => {
             option.addEventListener('click', (event) => {
                 checkAnswer(event.target);
+                disableOptions(); // Deshabilitar opciones después de seleccionar una respuesta
             });
         });
 
         startTimer();
         updateProgressBar(); // Actualizar la barra de progreso
+    }
+
+    // Función para deshabilitar las opciones
+    function disableOptions() {
+        const options = document.querySelectorAll('.option-box');
+        options.forEach(option => {
+            option.style.pointerEvents = 'none'; // Deshabilitar clics en las opciones
+        });
     }
 
     // Función para iniciar el temporizador
