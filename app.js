@@ -167,6 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para finalizar el juego y mostrar la puntuación
     function endGame() {
+        // Detener todos los sonidos
+        correctSound.pause();
+        correctSound.currentTime = 0;
+        incorrectSound.pause();
+        incorrectSound.currentTime = 0;
+        timerSound.pause();
+        timerSound.currentTime = 0;
+
         gameContainer.style.display = 'none';
         resultContainer.style.display = 'block';
         resultDiv.innerText = `Tu puntuación es: ${score} de ${questions.length}`;
