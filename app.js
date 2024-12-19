@@ -106,12 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para iniciar el temporizador
     function startTimer() {
-        let timeLeft = 13;
-        timerDiv.innerText = `Tiempo restante: ${timeLeft} segundos`;
+        let timeLeft = 15;
+        timerDiv.innerText = timeLeft; // Mostrar solo el número
         timerSound.play(); // Reproducir el sonido del temporizador una vez al inicio
         timer = setInterval(() => {
             timeLeft--;
-            timerDiv.innerText = `Tiempo restante: ${timeLeft} segundos`;
+            timerDiv.innerText = timeLeft; // Mostrar solo el número
 
             if (timeLeft <= 0) {
                 clearInterval(timer);
@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const explanationDiv = document.createElement('div');
         explanationDiv.classList.add('mt-3');
         explanationDiv.innerText = explanation;
+        explanationDiv.classList.add('explanation');
         triviaContainer.appendChild(explanationDiv);
     }
 

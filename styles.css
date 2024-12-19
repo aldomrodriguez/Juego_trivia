@@ -67,9 +67,34 @@ button {
 }
 
 /* Estilo para el contenedor del temporizador */
+#timer-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    text-align: center;
+}
+
+#timer-circle {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #5DB996;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #timer {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: #5DB996;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Estilo para el contenedor de la explicación */
