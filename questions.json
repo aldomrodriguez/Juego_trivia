@@ -1,0 +1,62 @@
+[
+    {
+        "question": "¿Cuál es la capital de Francia?",
+        "answers": ["París", "Londres", "Madrid", "Berlín"],
+        "correct": "París",
+        "explanation": "París es la capital y ciudad más poblada de Francia."
+    },
+    {
+        "question": "¿Cuál es el planeta más grande del sistema solar?",
+        "answers": ["Júpiter", "Saturno", "Marte", "Tierra"],
+        "correct": "Júpiter",
+        "explanation": "Júpiter es el planeta más grande del sistema solar."
+    },
+    {
+        "question": "¿Cuál es el océano más grande del mundo?",
+        "answers": ["Pacífico", "Atlántico", "Índico", "Ártico"],
+        "correct": "Pacífico",
+        "explanation": "El océano Pacífico es el más grande del mundo."
+    },
+    {
+        "question": "¿Cuál es el río más largo del mundo?",
+        "answers": ["Amazonas", "Nilo", "Misisipi", "Yangtsé"],
+        "correct": "Amazonas",
+        "explanation": "El río Amazonas es el más largo del mundo."
+    },
+    {
+        "question": "¿Cuál es el país más grande del mundo?",
+        "answers": ["Rusia", "Canadá", "China", "Estados Unidos", "Argentina", "Tuvalu", "Bolivia", "San Marino", "Brasil"],
+        "correct": "Rusia",
+        "explanation": "Rusia es el país más grande del mundo."
+    },
+    {
+        "question": "¿Cuál es el país más poblado del mundo?",
+        "answers": ["China", "India", "Estados Unidos", "Indonesia", "Chile", "Canadá"],
+        "correct": "China",
+        "explanation": "China es el país más poblado del mundo."
+    },
+    {
+        "question": "¿Cuál es el país más pequeño del mundo?",
+        "answers": ["Ciudad del Vaticano", "Mónaco", "Nauru", "Tuvalu", "Bolivia", "San Marino"],
+        "correct": "Ciudad del Vaticano",
+        "explanation": "La Ciudad del Vaticano es el país más pequeño del mundo."
+    },
+    {
+        "question": "¿Cuál es el desierto más grande del mundo?",
+        "answers": ["Sahara", "Antártico", "Gobi", "Arábigo"],
+        "correct": "Antártico",
+        "explanation": "El desierto Antártico es el más grande del mundo."
+    },
+    {
+        "question": "¿Cuál es el animal más grande del mundo?",
+        "answers": ["Ballena azul", "Elefante africano", "Oso polar", "Jirafa"],
+        "correct": "Ballena azul",
+        "explanation": "La ballena azul es el animal más grande del mundo."
+    },
+    {
+        "question": "¿Cuál es el animal más rápido del mundo?",
+        "answers": ["Guepardo", "León", "Leopardo", "Lobo"],
+        "correct": "Guepardo",
+        "explanation": "El guepardo es el animal más rápido del mundo."
+    }
+]

@@ -1,0 +1,42 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h1, h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+}
+
+.option-box {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-box:hover {
+    background-color: #f1f1f1;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+    color: white;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+    color: white;
+}
+
+/* Elimina restricciones para dispositivos de escritorio */
