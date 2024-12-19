@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestionIndex = 0; // Índice de la pregunta actual
     let score = 0; // Puntuación del jugador
     let timer; // Variable para el temporizador
+    let timeLeft = 15; // Tiempo restante para la pregunta actual
 
     // Cargar sonidos
     const correctSound = new Audio('sounds/correct.mp3');
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para iniciar el temporizador
     function startTimer() {
-        let timeLeft = 15;
+        timeLeft = 15;
         timerDiv.innerText = timeLeft; // Mostrar solo el número
         timerSound.play(); // Reproducir el sonido del temporizador una vez al inicio
         timer = setInterval(() => {
@@ -121,6 +122,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 1000);
     }
+
+    // Función para pausar el juego
+    function pauseGame() {
+        clearInterval(timer);
+        timerSound.pause();
+    }
+
+    // Función para reanudar el juego
+    function resumeGame() {
+        startTimer();
+    }
+
+    // Detectar cuando el navegador deja de estar en primer plano
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            pauseGame();
+        } else {
+            resumeGame();
+        }
+    });
 
     // Función para marcar la pregunta como incorrecta cuando el tiempo se termina
     function markAsIncorrect() {
