@@ -30,10 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return array;
     }
 
-    // Función para seleccionar 4 respuestas aleatorias
-    function getRandomAnswers(answers) {
-        const shuffledAnswers = shuffle([...answers]);
-        return shuffledAnswers.slice(0, 4);
+    // Función para seleccionar 4 respuestas aleatorias, incluyendo siempre la correcta
+    function getRandomAnswers(answers, correctAnswer) {
+        const shuffledAnswers = shuffle([...answers.filter(answer => answer !== correctAnswer)]);
+        const selectedAnswers = shuffledAnswers.slice(0, 3); // Seleccionar 3 respuestas aleatorias
+        selectedAnswers.push(correctAnswer); // Añadir la respuesta correcta
+        return shuffle(selectedAnswers); // Mezclar las respuestas seleccionadas
     }
 
     // Cargar las preguntas desde un archivo JSON
@@ -63,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayQuestion() {
         triviaContainer.innerHTML = '';
         const question = questions[currentQuestionIndex];
-        const randomAnswers = getRandomAnswers(question.answers); // Obtener 4 respuestas aleatorias
+        const randomAnswers = getRandomAnswers(question.answers, question.correct); // Obtener 4 respuestas aleatorias, incluyendo la correcta
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('mb-4');
         questionDiv.innerHTML = `
