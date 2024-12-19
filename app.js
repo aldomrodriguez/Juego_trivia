@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const incorrectSound = new Audio('sounds/incorrect.mp3');
     const timerSound = new Audio('sounds/timer.mp3'); // Añadir el sonido del temporizador
 
+    // Pre-cargar sonidos
+    correctSound.load();
+    incorrectSound.load();
+    timerSound.load();
+
     // Función para mezclar el array de preguntas
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -101,12 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para iniciar el temporizador
     function startTimer() {
-        let timeLeft = 15;
+        let timeLeft = 13;
         timerDiv.innerText = `Tiempo restante: ${timeLeft} segundos`;
+        timerSound.play(); // Reproducir el sonido del temporizador una vez al inicio
         timer = setInterval(() => {
             timeLeft--;
             timerDiv.innerText = `Tiempo restante: ${timeLeft} segundos`;
-            timerSound.play(); // Reproducir el sonido del temporizador
 
             if (timeLeft <= 0) {
                 clearInterval(timer);
@@ -119,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para marcar la pregunta como incorrecta cuando el tiempo se termina
     function markAsIncorrect() {
+        incorrectSound.currentTime = 0; // Reiniciar el sonido incorrecto
         incorrectSound.play(); // Reproducir sonido incorrecto
         showExplanation(); // Mostrar la explicación
         setTimeout(() => {
@@ -141,9 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedOption.dataset.answer === correctAnswer) {
             score++;
             selectedOption.classList.add('bg-success');
+            correctSound.currentTime = 0; // Reiniciar el sonido correcto
             correctSound.play(); // Reproducir sonido correcto
         } else {
             selectedOption.classList.add('bg-danger');
+            incorrectSound.currentTime = 0; // Reiniciar el sonido incorrecto
             incorrectSound.play(); // Reproducir sonido incorrecto
         }
 
